@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOdO-list</title>
+    <style>
+        body {
+            background:linear-gradient(white,#7300ff);
+            color: black;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            font-family: sans-serif;
+        
+
+        }
+    
+
+        input {
+            padding: 5px;
+            margin:10px;
+            border: none;
+            outline:none;
+            font-size: larger;
+            
+        
+        }
+
+        button {
+            padding: 5px;
+            margin: 0px;
+            font-size: large;
+            border: none;
+            background-color: white;
+           
+           
+
+        }
+
+        ul {
+            list-style: none;
+            
+        }
+        h1{
+            
+            font-size: 2rem;
+          
+        }
+        li{
+            font-size: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1> To-Do List</h1>
+    <div>
+    <input id="input">
+    <button onclick="add()">Add </button>
+    </div>
+    <ul id="list-container">
+    <li>Hello
+        <button onclick="deleteItem(event)">Delete</button>
+    </li>
+</ul>
+<script>
+    //select ul
+    var ul=document.getElementById("list-container")
+    var input=document.getElementById("input")
+   function add()
+   {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value +"<button onclick='deleteItem(event)'>Delete</button>"
+        ul.append(listitem)
+        }
+    
+    function deleteItem()
+    {
+        event.target.parentElement.remove()
+
+    }
+</script>
+</body>
+</html>
